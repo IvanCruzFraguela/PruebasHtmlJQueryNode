@@ -1,0 +1,43 @@
+<div>
+    <h3>Principal</h3>
+    <div>
+        <script>
+            function recibido() {
+                alert("recibido");
+            }
+            function FPrueba1GrabarClick() {
+                var datos = {};
+                console.error("paso por aquí");
+                datos.nombre = $("#tbNombre").val();
+                console.error("Nombre =  " + datos.nombre);
+                //alert("hola");
+                //alert("Por Enviar " + nombre);
+                var urlPost = "/GrabaNombre";
+                console.error("Nombre =  " + urlPost);
+                $.post(urlPost, { nombre: "valorFijo", otroDato: "otroValor" }, function (htmlexterno) { alert("RecibidoOnLine"); });
+                //alert("Enviado " + datos.nombre);
+            }
+            function FPrueba1Get() {
+                alert("estamos en el get");
+/*                $.get('/handle'
+                    , function (data) { 
+                        $("#Mensajes").html(data);
+                        console.error("Ha vuelto del get");
+                    }
+                    )
+                    */
+                    $.get("/handle?");
+                
+            }
+        </script>
+        <form id="FPrueba1" method="POST">
+            <label for="tbNombre">Nombre:</label>
+            <input id="tbNombre" type="text" value="abcde" />
+        </form>
+        <button onclick="javascript:FPrueba1GrabarClick();">Grabar</button>
+        <button onclick="javascript:FPrueba1Get();">Get</button>
+        <div id="Mensajes">
+        </div>
+
+    </div>
+</div>
