@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0px;
+            height: 100%;
+            background-color: bisque;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: lightgray;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            background-color: cyan;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            background-color: blue;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            background-color: cyan;
+        }
+        nav {
+            background-color: black;
+            color: white;
+        }
+        article {
+            background-color: aquamarine;
+        }
+        aside {
+            background-color: coral;
+        }
+        .clTitulo {
+            background-color: lightblue;
+            text-align: center;
+        }
+        .clPie {
+            background-color: green;
+            text-align: center;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="Titulo" class="clTitulo"></div>
+    </header>
+    <main>
+        <nav id="Menu"></nav>
+        <article id="Principal"></article>
+        <aside>aside</aside>
+    </main>
+    <footer>
+        <div class="clPie">Pie</div>
+    </footer>
+    <script>
+        $("#Principal").load("/html/Principal.html");
+        $("#Titulo").load("/html/Titulo.html");
+        $("#Menu").load("/html/Menu.html");
+    </script>
+</body>
+
+</html>
